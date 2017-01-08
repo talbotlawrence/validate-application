@@ -1,0 +1,58 @@
+<!-- Couldn't get occupation, employer, or addresses to work 
+I used these sites to build my regular expressions:
+http://regexlib.com/Default.aspx
+http://www.rubular.com/
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Banking Form</title>
+  <link rel="stylesheet" href="validation.css">
+</head>
+<body>
+  
+  <form action="bank-form.html" method="post">
+  	First name: <input type="text" name="fname" required pattern="[A-Z][a-z]+\s*"><br>
+  	Middle initial: <input type="text" name="minitial" required pattern="[A-Z]\.?"><br>
+    Last name: <input type="text" name="lname" required pattern="[A-Z][a-zA-Z-']+"><br>
+    Applicant address: <input type="text" name="aaddress" required pattern="\d+[ ](?:[A-Za-z0-9.-]+[ ]?)+(?:Avenue|Lane|Road|Boulevard|Drive|Street|Ave|Dr|Rd|Blvd|Ln|St)\.?"><br>
+  	Applicant occupation: <input type="text" name="aoccupation" required pattern="[A-Z].?"><br>
+  	Applicant employer: <input type="text" name="aemployer" required pattern="[A-Z][a-zA-Z-']+"><br>
+  	Employer address: <input type="text" name="eaddress" required pattern="\d+[ ](?:[A-Za-z0-9.-]+[ ]?)+(?:Avenue|Lane|Road|Boulevard|Drive|Street|Ave|Dr|Rd|Blvd|Ln|St)\.?"><br>
+
+  <p>Type of loan select element with these options:</p>
+
+  <select>
+    <option value="volvo">Commercial</option>
+    <option value="saab">Real estate</option>
+    <option value="mercedes">Personal</option>
+    <option value="audi">Mortgage</option>
+  </select> <br>
+
+  Requested amount of loan: <input type="text" name="loan" required pattern="\$[0-9]+(\.[0-9][0-9])?"> <br>
+
+  <input type="radio" name="loan-length" value="5">5 years<br>
+  <input type="radio" name="loan-length" value="15">15 years<br>
+  <input type="radio" name="loan-length" value="30">30 years<br>
+
+  <input type="checkbox" name="special" value="down">I have a down payment<br>
+  <input type="checkbox" name="special" value="out-of-state">Out-of-state resident<br>
+  <input type="checkbox" name="special" value="married">Married<br>
+  <input type="checkbox" name="special" value="co-signed">Loan will be co-signed<br>
+
+  <p>Additional Comments</p>
+  <textarea rows="4" cols="50">
+
+  </textarea> <br>
+
+  Applicant email address: <input type="text" name="email" required pattern="([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})"><br>
+  Applicant telephone number: <input type="text" name="telephone" required pattern="(1?(-?\d{3})-?)?(\d{3})(-?\d{4})"><br>
+  Applicant LinkedIn URL: <input type="text" name="LinkedIn" required pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"><br>
+
+  <input type="submit" value="Submit">
+  </form>
+
+</body>
+</html>

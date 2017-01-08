@@ -1,0 +1,11 @@
+/*
+
+*/
+
+input:focus:valid {
+	background-color: green;
+}
+
+input:focus:invalid {
+	background-color: red;
+}
